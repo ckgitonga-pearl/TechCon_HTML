@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule for TechCon 2024</title>
+    <style>
+:root{--bg:#f8fafc;--dark:#0f172a;--accent:#2563eb}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;background:var(--bg);color:var(--dark);line-height:1.5}
+.container{max-width:1100px;margin:0 auto;padding:18px}
+
+
+header{background:#0f172a;color:#fff;border-bottom:1px solid rgba(255,255,255,0.08)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:16px 0}
+.site-title{margin:0;font-size:1.4rem;font-weight:700;color:#fff}
+nav ul{list-style:none;margin:0;padding:0;display:flex;gap:14px}
+nav a{text-decoration:none;color:#e6eef8;padding:8px 10px;border-radius:6px;font-weight:600}
+nav a:hover, nav a:focus{background:rgba(255,255,255,0.12);outline:none}
+
+
+main{padding:28px 0}
+h2{margin-top:0}
+
+
+/* Table styles */
+.schedule-table{width:100%;border-collapse:collapse;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(2,6,23,0.06)}
+caption{padding:14px 18px;font-weight:700;text-align:left;background:#f1f5f9}
+th, td{padding:12px 14px;border-bottom:1px solid rgba(15,23,42,0.06);text-align:left}
+th{background:#fff;font-weight:700}
+tbody tr:hover{background:rgba(37,99,235,0.03)}
+.time-col{width:140px;font-weight:600;color:#0f172a}
+.session-col{min-width:320px}
+.speaker-col{width:220px;color:#334155}
+
+
+@media (max-width:720px){
+.schedule-table, .schedule-table thead, .schedule-table tbody, .schedule-table th, .schedule-table td, .schedule-table tr {display:block}
+.schedule-table caption{position:static}
+.schedule-table thead tr{position:absolute;top:-9999px;left:-9999px}
+.schedule-table tr{margin:0 0 12px 0;padding:12px;border-bottom:1px solid rgba(15,23,42,0.06)}
+.schedule-table td{border:0;padding:8px 10px;display:flex;justify-content:space-between}
+.schedule-table td::before{content:attr(data-label);font-weight:700;color:#0f172a;margin-right:8px}
+}
+
+
+footer{background:var(--dark);color:#fff;text-align:center;padding:18px;margin-top:28px}
+</style>
+</head>
+
+<body>
+    <!-- Header -->
+
+
+<table class="schedule-table" summary="Detailed timetable of TechCon 2024 sessions">
+<caption>Detailed Schedule of Events for TechCon 2024</caption>
+<thead>
+<tr>
+<th scope="col">Time</th>
+<th scope="col">Session</th>
+<th scope="col">Speaker</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="time-col" data-label="Time">09:00 - 09:30</td>
+<td class="session-col" data-label="Session">Opening Remarks &amp; Welcome</td>
+<td class="speaker-col" data-label="Speaker">Conference Chair</td>
+</tr>
+
+
+<tr>
+<td class="time-col" data-label="Time">09:30 - 10:15</td>
+<td class="session-col" data-label="Session">Keynote: The Future of Responsible AI</td>
+<td class="speaker-col" data-label="Speaker">Dr. Amina Mwangi</td>
+</tr>
+
+
+<tr>
+<td class="time-col" data-label="Time">10:30 - 11:15</td>
+<td class="session-col" data-label="Session">Scaling Microservices: Patterns &amp; Pitfalls</td>
+<td class="speaker-col" data-label="Speaker">Carlos Reyes</td>
+</tr>
+
+
+<tr>
+<td class="time-col" data-label="Time">11:30 - 12:15</td>
+<td class="session-col" data-label="Session">Designing for Accessibility</td>
+<td class="speaker-col" data-label="Speaker">Linh Tran</td>
+</tr>
+
+
+<tr>
+<td class="time-col" data-label="Time">12:15 - 13:30</td>
+<td class="session-col" data-label="Session">Lunch &amp; Networking</td>
+<td class="speaker-col" data-label="Speaker">—</td>
+</tr>
+
+
+<tr>
+<td class="time-col" data-label="Time">13:30 - 14:15</td>
+<td class="session-col" data-label="Session">Workshop: Building Secure APIs</td>
+<td class="speaker-col" data-label="Speaker">TBD</td>
+</tr>
+
+
+<tr>
+<td class="time-col" data-label="Time">14:30 - 15:15</td>
+<td class="session-col" data-label="Session">Panel: Ethics in AI Deployment</td>
+<td class="speaker-col" data-label="Speaker">Multiple Speakers</td>
+</tr>
+
+
+<tr>
+<td class="time-col" data-label="Time">15:30 - 16:15</td>
+<td class="session-col" data-label="Session">Closing Keynote</td>
+<td class="speaker-col" data-label="Speaker">Guest Speaker</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</main>
+
+
+<footer>
+<p>&copy; 2024 TechCon Conference. All rights reserved. Copyright.</p>
+</footer>
+
+</body>
+</html>
