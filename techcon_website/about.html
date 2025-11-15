@@ -4,168 +4,230 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About TechCon Conference 2024</title>
+
     <style>
-/* Basic page layout and typography */
-:root{--bg:#f8fafc;--dark:#0f172a;--accent:#2563eb}
-*{box-sizing:border-box}
-body{margin:0;font-family:system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;background:var(--bg);color:var(--dark);line-height:1.5}
-.container{max-width:1100px;margin:0 auto;padding:18px}
-
-
-/* Header */
-header{background:#0f172a;color:#fff;border-bottom:1px solid rgba(255,255,255,0.1)}
-.header-inner{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:16px 0}
-.site-title{margin:0;font-size:1.6rem;font-weight:700;color:#fff;letter-spacing:0.4px}
-nav ul{list-style:none;margin:0;padding:0;display:flex;gap:16px}
-nav a{text-decoration:none;color:#e2e8f0;padding:8px 12px;border-radius:6px;font-weight:600;transition:0.2s}
-nav a:hover, nav a:focus{background:rgba(255,255,255,0.18);color:#fff;outline:none}
-
-
-/* Main */ */
-main{padding:28px 0}
-.lead{font-size:1.05rem;margin-bottom:12px}
-section{background:#fff;padding:20px;border-radius:10px;margin-bottom:18px;box-shadow:0 1px 2px rgba(15,23,42,0.03)}
-.grid{display:grid;grid-template-columns:1fr 320px;gap:18px}
-@media (max-width:880px){.grid{grid-template-columns:1fr}}
-
-
-/* Speakers list */
-.speakers{display:flex;flex-direction:column;gap:12px}
-.speaker{display:flex;gap:12px;align-items:center}
-.speaker img{width:72px;height:72px;object-fit:cover;border-radius:8px}
-.speaker h4{margin:0;font-size:1rem}
-.meta{font-size:0.9rem;color:#334155}
-
-
-/* Video styles */
-.video-wrap video, .video-wrap iframe{width:100%;height:auto;border-radius:8px}
-footer {
-            margin-top: 40px;
-            padding: 18px;
-            background: var(--dark);
-            color: #ffffff;
-            text-align: center;
+        /* Basic page layout and typography */
+        :root { --bg:#f8fafc; --dark:#0f172a; --accent:#2563eb; }
+        * { box-sizing:border-box; }
+        body {
+            margin:0;
+            font-family:system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+            background:var(--bg);
+            color:var(--dark);
+            line-height:1.5;
+        }
+        .container {
+            max-width:1100px;
+            margin:0 auto;
+            padding:18px;
         }
 
+        /* Header */
+        header {
+            background:#0f172a;
+            color:#fff;
+            border-bottom:1px solid rgba(255,255,255,0.1);
+        }
+        .header-inner {
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            gap:18px;
+            padding:16px 0;
+        }
+        .site-title {
+            margin:0;
+            font-size:1.6rem;
+            font-weight:700;
+            color:#fff;
+        }
+        nav ul {
+            list-style:none;
+            margin:0;
+            padding:0;
+            display:flex;
+            gap:16px;
+        }
+        nav a {
+            text-decoration:none;
+            color:#e2e8f0;
+            padding:8px 12px;
+            border-radius:6px;
+            font-weight:600;
+            transition:0.2s;
+        }
+        nav a:hover {
+            background:rgba(255,255,255,0.18);
+            color:#fff;
+        }
 
-</style>
+        /* Main */
+        main {
+            padding:28px 0;
+        }
+        .lead {
+            font-size:1.05rem;
+            margin-bottom:12px;
+        }
+        section, article {
+            background:#fff;
+            padding:20px;
+            border-radius:10px;
+            margin-bottom:18px;
+            box-shadow:0 1px 2px rgba(15,23,42,0.03);
+        }
+
+        /* Grid for articles + aside */
+        .layout {
+            display:grid;
+            grid-template-columns:1fr 320px;
+            gap:18px;
+        }
+        @media (max-width:880px) {
+            .layout { grid-template-columns:1fr; }
+        }
+
+        /* Speakers list */
+        .speakers { display:flex; flex-direction:column; gap:12px; }
+        .speaker { display:flex; gap:12px; align-items:center; }
+        .speaker img {
+            width:72px;
+            height:72px;
+            object-fit:cover;
+            border-radius:8px;
+        }
+        .speaker h4 { margin:0; font-size:1rem; }
+        .meta { font-size:0.9rem; color:#334155; }
+
+        /* Video styles */
+        .video-wrap video,
+        .video-wrap iframe {
+            width:100%;
+            height:auto;
+            border-radius:8px;
+        }
+
+        footer {
+            margin-top:40px;
+            padding:18px;
+            background:var(--dark);
+            color:#fff;
+            text-align:center;
+        }
+    </style>
 </head>
 
 <body>
-    
+
 <header>
-  <div class="container header-inner">
-    <h1 class="site-title">About TechCon 2024</h1>
+    <div class="container header-inner">
+        <h1 class="site-title">About TechCon 2024</h1>
 
-    <nav aria-label="Main navigation">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="schedule.html">Schedule</a></li>
-        <li><a href="register.html">Register</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
-
-  
+        <nav aria-label="Main navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="schedule.html">Schedule</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
 </header>
 
 <main class="container">
-    <!-- Article: History -->
-<article id="history" aria-labelledby="history-heading">
-<h2 id="history-heading">History</h2>
-<p>
-TechCon began in 2015 as a local meetup for developers interested in open-source tools and scalable systems. Over the years it has grown into an international conference with an emphasis on practical engineering, responsible AI, and product design. Each year we add workshops and tracks to reflect the most impactful trends in technology.
-</p>
 
+    <div class="layout">
+        <div>
+            <!-- History -->
+            <article id="history" aria-labelledby="history-heading">
+                <h2 id="history-heading">History</h2>
+                <p>
+                    TechCon began in 2015 as a local meetup for developers interested in open-source tools
+                    and scalable systems. Over the years it has grown into an international conference 
+                    with an emphasis on practical engineering, responsible AI, and product design.
+                    Each year we add workshops and tracks to reflect the most impactful trends in technology.
+                </p>
 
-<!-- Historical images — include descriptive alt text for accessibility -->
-<div class="history-images">
-<figure>
-<img src="history-2019.jpg" alt="Stage with speakers at TechCon 2019 showing a full auditorium" />
-<figcaption>TechCon 2019 — growth into an international event.</figcaption>
-</figure>
-</div>
-</article>
+                <figure>
+                    <img src="history-2019.jpg" alt="Speakers on stage at TechCon 2019 with a full auditorium">
+                    <figcaption>TechCon 2019 — growth into an international event.</figcaption>
+                </figure>
+            </article>
+
+            <!-- Mission -->
+            <article id="mission" aria-labelledby="mission-heading">
+                <h2 id="mission-heading">Mission</h2>
+                <p>
+                    Our mission is simple: empower builders and decision-makers with knowledge, tools, and
+                    connections to build technology that benefits everyone. We focus on high-quality talks,
+                    hands-on workshops, and safe spaces for networking and mentorship.
+                </p>
+            </article>
+
+            <!-- Speakers -->
+            <article id="speakers" aria-labelledby="speakers-heading">
+                <h2 id="speakers-heading">Notable Past Speakers</h2>
+                <p class="meta">Below are a few notable speakers who have presented at TechCon in past years.</p>
+
+                <div class="speakers">
+                    <article class="speaker">
+                        <img src="speaker-1.jpg" alt="Portrait of Dr. Amina Mwangi, AI Researcher">
+                        <div>
+                            <h4>Dr. Amina Mwangi</h4>
+                            <p class="meta">AI Researcher — Talk: "Responsible Machine Learning in Production" (2022)</p>
+                        </div>
+                    </article>
+
+                    <article class="speaker">
+                        <img src="speaker-2.jpg" alt="Portrait of Carlos Reyes, CTO at OpenApps">
+                        <div>
+                            <h4>Carlos Reyes</h4>
+                            <p class="meta">CTO, OpenApps — Talk: "Scaling Microservices" (2019)</p>
+                        </div>
+                    </article>
+
+                    <article class="speaker">
+                        <img src="speaker-3.jpg" alt="Portrait of Linh Tran, Product Lead">
+                        <div>
+                            <h4>Linh Tran</h4>
+                            <p class="meta">Product Lead — Talk: "Designing for Accessibility" (2021)</p>
+                        </div>
+                    </article>
+                </div>
+            </article>
+        </div>
+
+        <!-- Sidebar -->
+        <aside>
+            <section class="video-wrap" aria-label="Promotional media">
+                <h3>Watch: TechCon Highlights</h3>
+
+                <video controls preload="metadata" aria-describedby="video-desc">
+                    <source src="promo.mp4" type="video/mp4">
+                    <track src="subtitles.vtt" kind="subtitles" srclang="en" label="English">
+                    Your browser does not support the video element.
+                </video>
+
+                <p id="video-desc" class="meta">
+                    A short highlights reel from previous TechCon events showcasing talks, workshops and networking.
+                </p>
+
+                <hr style="margin:16px 0;border:none;border-top:1px solid rgba(15,23,42,0.06)">
+
+                <h4>Past Talk: "Scaling Microservices"</h4>
+                <iframe 
+                    title="Past talk video: Scaling Microservices" 
+                    src="https://www.youtube.com/embed/VIDEO_ID"
+                    allowfullscreen>
+                </iframe>
+            </section>
+        </aside>
+    </div>
 </main>
-
-<!-- Article: Mission -->
-<article id="mission" aria-labelledby="mission-heading">
-<h2 id="mission-heading">Mission</h2>
-<p>
-Our mission is simple: empower builders and decision-makers with knowledge, tools, and connections to build technology that benefits everyone. We focus on high-quality talks, hands-on workshops, and safe spaces for networking and mentorship.
-</p>
-</article>
-
-
-<!-- Article: Notable Past Speakers -->
-<article id="speakers" aria-labelledby="speakers-heading">
-<h2 id="speakers-heading">Notable Past Speakers</h2>
-<p class="meta">Below are a few notable speakers who have presented at TechCon in past years.</p>
-
-
-<div class="speakers">
-<article class="speaker">
-<img src="speaker-1.jpg" alt="Portrait of Dr. Amina Mwangi, AI Researcher">
-<div>
-<h4>Dr. Amina Mwangi</h4>
-<p class="meta">AI Researcher — Talk: "Responsible Machine Learning in Production" (2022)</p>
-</div>
-</article>
-
-
-<article class="speaker">
-<img src="speaker-2.jpg" alt="Portrait of Carlos Reyes, CTO at OpenApps">
-<div>
-<h4>Carlos Reyes</h4>
-<p class="meta">CTO, OpenApps — Talk: "Scaling Microservices" (2019)</p>
-</div>
-</article>
-
-
-<article class="speaker">
-<img src="speaker-3.jpg" alt="Portrait of Linh Tran, Product Lead">
-<div>
-<h4>Linh Tran</h4>
-<p class="meta">Product Lead — Talk: "Designing for Accessibility" (2021)</p>
-</div>
-</article>
-</div>
-</article>
-
-
-<!-- Aside: Embedded media (kept to the right column layout) -->
-<aside>
-<section class="video-wrap" aria-label="Promotional media">
-<h3>Watch: TechCon Highlights</h3>
-
-
-<video controls preload="metadata" aria-describedby="video-desc">
-<source src="promo.mp4" type="video/mp4">
-<track src="subtitles.vtt" kind="subtitles" srclang="en" label="English">
-Your browser does not support the video element.
-</video>
-
-
-<p id="video-desc" class="meta">A short highlights reel from previous TechCon events showcasing talks, workshops and community networking.</p>
-
-
-<hr style="margin:16px 0;border:none;border-top:1px solid rgba(15,23,42,0.06)">
-
-
-<h4>Past Talk: "Scaling Microservices"</h4>
-<iframe title="Past talk video: Scaling Microservices" src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen style="min-height:180px;border-radius:8px"></iframe>
-</section>
-</aside>
-</main>
-
 
 <footer>
     <p>&copy; 2024 TechCon Conference. All rights reserved.</p>
 </footer>
-</main>
-
-
 
 </body>
 </html>
