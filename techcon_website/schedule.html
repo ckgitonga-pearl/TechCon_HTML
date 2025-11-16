@@ -22,30 +22,118 @@ main{padding:28px 0}
 h2{margin-top:0}
 
 /* Table styles */
-.schedule-table{width:100%;border-collapse:collapse;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(2,6,23,0.06)}
-caption{padding:14px 18px;font-weight:700;text-align:left;background:#f1f5f9}
-th, td{padding:12px 14px;border-bottom:1px solid rgba(15,23,42,0.06);text-align:left}
-th{background:#fff;font-weight:700}
-tbody tr:hover{background:rgba(37,99,235,0.03)}
-.time-col{width:140px;font-weight:600;color:#0f172a}
-.session-col{min-width:320px}
-.speaker-col{width:220px;color:#334155}
+<style>
+/* Visually-hidden helper */
+.sr-only {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;
+  border: 0;
+}
 
-@media (max-width:720px){
-.schedule-table,
-.schedule-table thead,
-.schedule-table tbody,
-.schedule-table th,
+/* Wrapper for spacing */
+.table-wrapper { max-width: 1100px; margin: 18px auto; padding: 0 12px; }
+
+/* Core table */
+.schedule-table {
+  width: 100%;
+  border-collapse: separate; /* use separate so we can show clear column borders */
+  border-spacing: 0;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(2,6,23,0.06);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* Caption */
+.schedule-table caption {
+  padding: 14px 18px;
+  font-weight: 700;
+  text-align: left;
+  background: #f1f5f9;
+  font-size: 1rem;
+}
+
+/* Header row */
+.schedule-table thead th {
+  padding: 12px 14px;
+  text-align: left;
+  background: #ffffff;
+  font-weight: 700;
+  border-bottom: 2px solid rgba(15,23,42,0.08);
+}
+
+/* Cells */
+.schedule-table th[scope="row"],
+.schedule-table td {
+  padding: 12px 14px;
+  vertical-align: middle;
+  border-bottom: 1px solid rgba(15,23,42,0.06);
+}
+
+/* Column separators (desktop) */
+.schedule-table thead th,
 .schedule-table td,
-.schedule-table tr {
-    display:block;
+.schedule-table th[scope="row"] {
+  border-right: 1px solid rgba(15,23,42,0.06);
 }
-.schedule-table caption{position:static}
-.schedule-table thead tr{position:absolute;top:-9999px;left:-9999px}
-.schedule-table tr{margin:0 0 12px 0;padding:12px;border-bottom:1px solid rgba(15,23,42,0.06)}
-.schedule-table td{border:0;padding:8px 10px;display:flex;justify-content:space-between}
-.schedule-table td::before{content:attr(data-label);font-weight:700;color:#0f172a;margin-right:8px}
+.schedule-table thead th:last-child,
+.schedule-table td:last-child,
+.schedule-table th[scope="row"]:last-child { border-right: 0; }
+
+/* Visual emphasis for time and speaker columns */
+.time-col { width: 160px; font-weight: 600; color: #0f172a; white-space: nowrap; }
+.session-col { min-width: 320px; }
+.speaker-col { width: 220px; color: #334155; }
+
+/* Zebra striping and hover */
+.schedule-table tbody tr:nth-child(odd) { background: #fff; }
+.schedule-table tbody tr:nth-child(even) { background: #fbfdff; }
+.schedule-table tbody tr:hover { background: rgba(37,99,235,0.03); }
+
+/* Focus styles for keyboard users */
+.schedule-table tbody tr:focus-within { outline: 3px solid rgba(37,99,235,0.12); }
+
+/* Responsive: stack rows on narrow screens */
+@media (max-width: 720px) {
+  .schedule-table { border-radius: 6px; box-shadow: none; }
+
+  .schedule-table thead { display: none; } /* hide the header */
+  .schedule-table, .schedule-table tbody, .schedule-table tr, .schedule-table td, .schedule-table th[scope="row"] {
+    display: block;
+    width: 100%;
+  }
+
+  .schedule-table tr {
+    margin: 0 0 12px 0;
+    padding: 10px;
+    border: 1px solid rgba(15,23,42,0.04);
+    border-radius: 6px;
+  }
+
+  .schedule-table th[scope="row"],
+  .schedule-table td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 10px;
+    border: 0;
+  }
+
+  /* show label before each value */
+  .schedule-table th[scope="row"]::before { content: "Time"; font-weight:700; margin-right:8px; color:#0f172a; }
+  .schedule-table td.session-col::before { content: "Session"; font-weight:700; margin-right:8px; color:#0f172a; }
+  .schedule-table td.speaker-col::before { content: "Speaker"; font-weight:700; margin-right:8px; color:#0f172a; }
+
+  /* Make labels and values wrap naturally */
+  .schedule-table th[scope="row"]::before,
+  .schedule-table td::before { flex: 0 0 auto; white-space: nowrap; }
+  .schedule-table th[scope="row"],
+  .schedule-table td { flex-wrap: nowrap; gap: 8px; }
 }
+</style>
 footer {
             margin-top: 40px;
             padding: 18px;
@@ -74,66 +162,73 @@ footer {
 
 <main class="container">
 
-    <table class="schedule-table" summary="Detailed timetable of TechCon 2024 sessions">
-        <caption>Detailed Schedule of Events for TechCon 2024</caption>
-        <thead>
-            <tr>
-                <th scope="col">Time</th>
-                <th scope="col">Session</th>
-                <th scope="col">Speaker</th>
-            </tr>
-        </thead>
+   <div class="table-wrapper">
+  <p id="schedule-desc" class="sr-only">
+    Detailed timetable of TechCon 2024 sessions with time, session title and speaker.
+  </p>
 
-        <tbody>
-            <tr>
-                <td class="time-col" data-label="Time">09:00 - 09:30</td>
-                <td class="session-col" data-label="Session">Opening Remarks &amp; Welcome</td>
-                <td class="speaker-col" data-label="Speaker">Conference Chair</td>
-            </tr>
+  <table class="schedule-table" aria-describedby="schedule-desc">
+    <caption>Detailed Schedule of Events — TechCon 2024</caption>
 
-            <tr>
-                <td class="time-col" data-label="Time">09:30 - 10:15</td>
-                <td class="session-col" data-label="Session">Keynote: The Future of Responsible AI</td>
-                <td class="speaker-col" data-label="Speaker">Dr. Amina Mwangi</td>
-            </tr>
+    <thead>
+      <tr>
+        <th scope="col">Time</th>
+        <th scope="col">Session</th>
+        <th scope="col">Speaker</th>
+      </tr>
+    </thead>
 
-            <tr>
-                <td class="time-col" data-label="Time">10:30 - 11:15</td>
-                <td class="session-col" data-label="Session">Scaling Microservices: Patterns &amp; Pitfalls</td>
-                <td class="speaker-col" data-label="Speaker">Carlos Reyes</td>
-            </tr>
+    <tbody>
+      <tr>
+        <th scope="row" class="time-col">09:00 - 09:30</th>
+        <td class="session-col">Opening Remarks &amp; Welcome</td>
+        <td class="speaker-col">Conference Chair</td>
+      </tr>
 
-            <tr>
-                <td class="time-col" data-label="Time">11:30 - 12:15</td>
-                <td class="session-col" data-label="Session">Designing for Accessibility</td>
-                <td class="speaker-col" data-label="Speaker">Linh Tran</td>
-            </tr>
+      <tr>
+        <th scope="row" class="time-col">09:30 - 10:15</th>
+        <td class="session-col">Keynote: The Future of Responsible AI</td>
+        <td class="speaker-col">Dr. Amina Mwangi</td>
+      </tr>
 
-            <tr>
-                <td class="time-col" data-label="Time">12:15 - 13:30</td>
-                <td class="session-col" data-label="Session">Lunch &amp; Networking</td>
-                <td class="speaker-col" data-label="Speaker">—</td>
-            </tr>
+      <tr>
+        <th scope="row" class="time-col">10:30 - 11:15</th>
+        <td class="session-col">Scaling Microservices: Patterns &amp; Pitfalls</td>
+        <td class="speaker-col">Carlos Reyes</td>
+      </tr>
 
-            <tr>
-                <td class="time-col" data-label="Time">13:30 - 14:15</td>
-                <td class="session-col" data-label="Session">Workshop: Building Secure APIs</td>
-                <td class="speaker-col" data-label="Speaker">TBD</td>
-            </tr>
+      <tr>
+        <th scope="row" class="time-col">11:30 - 12:15</th>
+        <td class="session-col">Designing for Accessibility</td>
+        <td class="speaker-col">Linh Tran</td>
+      </tr>
 
-            <tr>
-                <td class="time-col" data-label="Time">14:30 - 15:15</td>
-                <td class="session-col" data-label="Session">Panel: Ethics in AI Deployment</td>
-                <td class="speaker-col" data-label="Speaker">Multiple Speakers</td>
-            </tr>
+      <tr>
+        <th scope="row" class="time-col">12:15 - 13:30</th>
+        <td class="session-col">Lunch &amp; Networking</td>
+        <td class="speaker-col">—</td>
+      </tr>
 
-            <tr>
-                <td class="time-col" data-label="Time">15:30 - 16:15</td>
-                <td class="session-col" data-label="Session">Closing Keynote</td>
-                <td class="speaker-col" data-label="Speaker">Guest Speaker</td>
-            </tr>
-        </tbody>
-    </table>
+      <tr>
+        <th scope="row" class="time-col">13:30 - 14:15</th>
+        <td class="session-col">Workshop: Building Secure APIs</td>
+        <td class="speaker-col">TBD</td>
+      </tr>
+
+      <tr>
+        <th scope="row" class="time-col">14:30 - 15:15</th>
+        <td class="session-col">Panel: Ethics in AI Deployment</td>
+        <td class="speaker-col">Multiple Speakers</td>
+      </tr>
+
+      <tr>
+        <th scope="row" class="time-col">15:30 - 16:15</th>
+        <td class="session-col">Closing Keynote</td>
+        <td class="speaker-col">Guest Speaker</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 </main>
 <footer>
