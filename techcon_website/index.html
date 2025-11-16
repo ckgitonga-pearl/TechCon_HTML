@@ -48,12 +48,41 @@
     .container { flex-direction: column; gap: 12px; align-items: flex-start; }
     .main-nav { flex-wrap: wrap; gap: 8px; }
   }
-  footer {
-            margin-top: 40px;
-            padding: 18px;
-            background: var(--dark);
-            color: #ffffff;
+
+/* Main Content */
+main {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 12px;
+}
+
+.intro h2 {
+  font-size: 1.8rem;
+  margin-bottom: 12px;
+  color: #0f172a;
+}
+
+.intro p {
+  line-height: 1.6;
+  font-size: 1.1rem;
+  margin-bottom: 24px;
+  max-width: 800px;
+}
+
+video {
+  width: 100%;
+  max-width: 700px;
+  border-radius: 10px;
+  outline: none;
+}
+
+  /* Footer */
+        footer {
+            background: var(--dark, #334155);
+            color: #fff;
             text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
         }
     </style>
 
@@ -86,36 +115,11 @@
     </video>
 </section>
           <style>
-    /* Main Content */
-main {
-  max-width: 1100px;
-  margin: 40px auto;
-  padding: 0 12px;
-}
-
-.intro h2 {
-  font-size: 1.8rem;
-  margin-bottom: 12px;
-  color: #0f172a;
-}
-
-.intro p {
-  line-height: 1.6;
-  font-size: 1.1rem;
-  margin-bottom: 24px;
-  max-width: 800px;
-}
-
-video {
-  width: 100%;
-  max-width: 700px;
-  border-radius: 10px;
-  outline: none;
-}
-</style>
+    
 <footer>
-    <p>&copy; 2024 TechCon Conference. All rights reserved.</p>
-</footer>
+        <p>&copy; 2024 TechCon Conference. All rights reserved.</p>
+    </footer>
+</main>
 
 </main>
 
